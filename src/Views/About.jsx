@@ -1,98 +1,121 @@
 import React from "react";
-import { makeStyles} from "@material-ui/core/styles";
-import Grid from '@material-ui/core/Grid';
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
 import Container from "../Components/Container";
 import Button from "../Components/buttons/Button";
+import SectionTitle from "../Components/elements/SectionTitle";
 
-import img_person1 from "../Assets/images/happy-young-man-pointing-finger-aside_1262-14983@1X.png"
-import blueWave from "../Assets/images/blue_wave.png";
+import img_person2 from "../Assets/images/corporate-man-holding-ipad-medium-shot_23-2148336825@1X.png";
 
 const useStyles = makeStyles((theme) => ({
+  about: {
+    padding: "0px 0px 50px 0px",
+  },
 
-    about:{
-        padding:"200px 0px 0px 0px",
+  about_card: {
+    boxShadow: `0px 0px 50px ${theme.palette.blue_shadow.main}`,
+  },
+
+  image: {
+    backgroundImage: `url(${img_person2})`,
+    backgroundSize: "cover",
+    backgroundPosition: "50% center",
+    height: "480px",
+    width: "99%",
+    transform: "scaleX(-1)",
+  },
+
+  description: {
+
+    padding:"40px 25px",
+    color: theme.palette.font.main,
+
+    "& h4": {
+      fontWeight: "500",
+      fontSIze: "25px",
+      margin: "6px 0px",
+    },
+    "& p": {
+      fontWeight: "300",
+      fontSize: "12px",
+      margin: "6px 0px 25px 0px",
+    },
+    "& h5":{
+        fontWeight: "600",
+        margin: "50px 0px 0px 0px",
+        color: theme.palette.primary.main,
     },
 
-    image:{
-        backgroundImage:`url(${img_person1})`,
-        backgroundSize:"166%",
-        backgroundPosition:"32% center",
-        height:"400px",
-        width:"400px",
-        transform:"scaleX(-1)",
-
-        borderRadius:"50%",
-        border:`solid 16px ${theme.palette.background_2.main}`,
-        boxShadow:`0px 0px 50px ${theme.palette.blue_shadow.main}`,
+    "& ul":{
+      fontWeight: "300",
+      fontSize: "12px",
+      padding:"0px",
+      listStyle:"none",
+      listStylePosition: "outside",
     },
 
-    description_container:{
-        display:"flex",
-        alignItems:"center",
-    },
+    "& li":{
+        margin: "6px 0px",
 
-    description:{
-        "& h3":{
-            color:theme.palette.primary.main,
-            fontWeight:"700",
-            fontSIze:"25px",
-            margin:"6px 0px",
-        },
-        "& h1":{
-            color:theme.palette.primary.main,
-            fontWeight:"800",
-            fontSize:"35px",
-            margin:"6px 0px",
-        },
-        "& p":{
-            color:theme.palette.font.main,
-            fontWeight:"300",
-            fontSize:"10px",
-            margin:"6px 0px 25px 0px",
-        },
-        "& .orange":{
-            color:theme.palette.secondary.main,
-            margin:"6px 0px",
+        "&:before": {
+          backgroundColor:theme.palette.secondary.main,
+          content: '""',
+          display:"inline-block",
+          height:"10px",
+          width:"10px",
+          margin:"0px 15px",
+          borderRadius:"50%",
+      }
+    
+  },}
 
-        }
-    },
-
-    wave:{
-        width:"100%",
-        display:"block",
-    }
 }));
 
+const About = () => {
+  const cs = useStyles();
 
-const About=()=>{
+  return (
+    <div className={cs.about}>
+      <Container>
+        <SectionTitle title="About Us" text="Why Choose Me?" />
 
-    const cs=useStyles();
-    
-    return(
-        <div className={cs.about} >
-        <Container>
-
-            <Grid container spacing={0} >
-                <Grid item xl={6} lg={6} md={6} className={cs.description_container} >
-                    <div className={cs.description} >
-                        <h3>Hello, IM <span className="orange" > White Alexa </span></h3>
-                        <h1>Creative Designer</h1>
-                        <p>Freelancer Web/ Mobile UI/UX Designer with Motion Graphics</p>
-                        <Button color="primary" >Hire Me</Button>
-                        <Button color="secondary" >Get Resume</Button>
-
-                    </div>
-                </Grid>
-
-                <Grid item xl={6} lg={6} md={6} >
-                    <div className={cs.image} />
-                </Grid>
+        <div className={cs.about_card}>
+          <Grid container spacing={0}>
+            <Grid item xl={6} lg={6} md={6} sm={12} xs={12}>
+              <div className={cs.image} />
             </Grid>
 
-        </Container>
-        <img className={cs.wave} src={blueWave} />
+            <Grid item xl={6} lg={6} md={6} sm={12} xs={12} >
+              <div className={cs.description}>
+                <h4>Why Choose me ?</h4>
+                <p>
+                Lorem ipsum, or lipsum as it is sometimes known, is dummy text
+                used in laying out print, graphic or web designs. The passage is
+                attributed to an unknown typesetter in the 15th century who is
+                thought to have scrambled parts of Cicero's De Finibus Bonorum
+                et Malorum for use in a type specimen book.
+                </p>
+
+                <h5>Here is Few Features:</h5>
+
+                <ul>
+                    <li>User Interface Design</li>
+                    <li>User Experience Design</li>
+                    <li>Visual Commination Design</li>
+                    <li>Interaction Design</li>
+                    <li>Supper Support</li>
+                </ul>
+
+
+                <Button color="primary">Hire Me</Button>
+                <Button color="secondary">Get Resume</Button>
+              </div>
+            </Grid>
+          </Grid>
         </div>
-    );
-}
+      </Container>
+    </div>
+  );
+};
 
 export default About;

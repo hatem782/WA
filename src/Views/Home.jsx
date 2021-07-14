@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
         "& h3":{
             color:theme.palette.primary.main,
             fontWeight:"700",
-            fontSIze:"25px",
             margin:"6px 0px",
         },
         "& h1":{
@@ -48,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
             color:theme.palette.font.main,
             fontWeight:"300",
             fontSize:"10px",
-            margin:"6px 0px 25px 0px",
+            margin:"6px 0px 5px 0px",
         },
         "& .orange":{
             color:theme.palette.secondary.main,
