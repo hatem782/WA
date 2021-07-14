@@ -3,6 +3,7 @@ import { makeStyles} from "@material-ui/core/styles";
 import Navbar from "../Layouts/NavBar";
 import Home from "./Home.jsx";
 import About from "./About.jsx";
+import Services from "./Services.jsx"
 
 const useStyles = makeStyles((theme) => ({
     page:{
@@ -17,6 +18,7 @@ const Page = () => {
         <Navbar />
         <Home />
         <About/>
+        <Services/>
         
       </div>
   );
