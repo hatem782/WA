@@ -28,6 +28,10 @@ const useStyles = makeStyles((theme) => ({
     items:{
         padding:"30px 0px",
 
+        "& :hover":{
+            cursor:"pointer",
+        },
+
         "& .active":{
             
             "&:after":{
@@ -58,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
             width:"40px",
             backgroundColor:theme.palette.primary.main,
             borderRadius:"500px", 
-            transition:"all 0.2s",
+            transition:"all 0.5s",
         },
 
         "& .img":{
@@ -89,7 +93,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const MenuCard=(props)=>{
-    const {items}=props;
+    const {items,activeItem}=props;
     const cs = useStyles();
     return(
         <div className={cs.card} >
@@ -98,7 +102,7 @@ const MenuCard=(props)=>{
             <div className={"right " + cs.items }>
                 {
                     items.map((item,key)=>{
-                        return <Item key={key} item={item} />
+                        return <Item key={key} item={item} activeItem={activeItem} />
                     })
                 }
             </div>
@@ -112,10 +116,13 @@ export default MenuCard;
 
 const Item=(props)=>{
     const cs = useStyles();
-    const {active=false,title,img}=props.item;
+    const {active=false,title,img,id}=props.item;
+    const {activeItem}=props;
 
     return(
-        <div className={cs.item +" " +(active ? "active" :"")} >
+        <div 
+        className={cs.item +" " +(active ? "active" :"")}
+        onClick={()=>{activeItem(id)}} >
                 <div className="img" style={{backgroundImage:`url(${img})`}} />
                 <h5>{title}</h5>
         </div>
