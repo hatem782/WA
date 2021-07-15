@@ -10,8 +10,7 @@ const useStyles = makeStyles((theme) => ({
         outline:"none",
         border:"none",
         padding:"12px 0px",
-        marginRight:"20px",
-        marginTop:"20px",
+        margin:"10px 20px 10px 0px",
         width:"140px",
         borderRadius:"500px;",
         boxShadow:`0px 7px 7px #0abead50`,
@@ -19,6 +18,17 @@ const useStyles = makeStyles((theme) => ({
 
         fontWeight:"600",
         fontSize:"12px",
+        transition:"all 0.2s",
+
+        "&:hover":{
+            cursor:"pointer",
+            transform:"scale(1.05)",
+        },
+
+        "&:active":{
+            transform:"scale(0.95)",
+            boxShadow:`0px 7px 7px #00000000`,
+        }
     },
     orange:{
         backgroundColor:theme.palette.secondary.main,
@@ -31,7 +41,14 @@ const Button=(props)=> {
     const {children,color}=props;
     const cs=useStyles();
     return (
-        <button className={cs.button + " " + (color==="primary" ? " ": cs.orange)  }  >
+        <button 
+        className={cs.button + " " + (color==="primary" ? " ": cs.orange)  }
+        style={
+            (color!=="primary"||color!=="secondary") ? 
+            {backgroundColor:color,boxShadow:`0px 7px 7px ${color}50`,}
+            :null
+        }
+        >
             {props.children}
         </button>
     )

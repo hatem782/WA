@@ -39,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
 
   img_container:{
       padding:"20px",
+
   },
 
   img:{
@@ -46,6 +47,8 @@ const useStyles = makeStyles((theme) => ({
       height:"300px",
       backgroundSize:"cover",
       backgroundPosition:"center center",
+      boxShadow:`0px 0px 20px ${theme.palette.blue_shadow.main}`,
+
   }
 }));
 
@@ -124,7 +127,7 @@ const Sites=(props)=>{
             {
                 sites_group.map((item,key)=>{
                     return(
-                    <Grid item xl={4} lg={4} >
+                    <Grid key={key} item xl={4} lg={4} >
                         <SiteImg img={item.img}  /> 
                     </Grid>
                     )
@@ -149,11 +152,3 @@ const SiteImg=(props)=>{
 
 export default Portfolio;
 
-
-/*const elements=[
-    <h1>hello</h1>,
-    <h1>how</h1>,
-    <h1>are</h1>,
-    <h1>you</h1>,
-    <h1>?</h1>,
-]*/

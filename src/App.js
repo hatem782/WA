@@ -6,7 +6,7 @@ import Theme from "./Components/Theme";
 
 function App() {
   return (
-    <Theme dark={false} >
+    <Theme dark={true} >
     <Page/>
     </Theme>
   );

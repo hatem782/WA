@@ -15,6 +15,13 @@ const useStyles = makeStyles((theme) => ({
     color:"white",
     textAlign:"center",
     position:"relative",
+
+    transition:"all 0.2s",
+
+    "&:hover":{
+      transform:"scale(1.05)",
+      cursor:"pointer",
+    }
   },
 
   img:{
@@ -50,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-const SectionTitle = (props) => {
+const ServiceCard = (props) => {
   const {title,text,img,color1,color2}=props.service;
   const cs = useStyles();
 
@@ -68,7 +75,7 @@ const SectionTitle = (props) => {
   );
 };
 
-export default SectionTitle;
+export default ServiceCard;
 
 
 const SvgService=(props)=>{
@@ -77,7 +84,7 @@ const SvgService=(props)=>{
 
   return(
     <svg className={cs.waves}  xmlns="http://www.w3.org/2000/svg" width="369.919" height="223.59" viewBox="0 0 369.919 223.59">
-      <path id="Shape" class="cls-1" style={{fill:color2}} d="M449,2700.557s15.007-66.794,51.8-54.34,43.02,57.737,121.7,13.585,95.662-58.3,124.531-23.774,71.888-34.53,71.888-34.53v223.59H449Z" transform="translate(-449 -2601.498)"/>
+      <path id="Shape" style={{fill:color2}} d="M449,2700.557s15.007-66.794,51.8-54.34,43.02,57.737,121.7,13.585,95.662-58.3,124.531-23.774,71.888-34.53,71.888-34.53v223.59H449Z" transform="translate(-449 -2601.498)"/>
     </svg>
   )
 
