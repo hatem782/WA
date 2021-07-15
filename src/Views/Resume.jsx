@@ -11,7 +11,7 @@ import InfoList from "../Components/elements/InfoList";
 
 const useStyles = makeStyles((theme) => ({
   resume_wrap: {
-    margin: "100px 0px",
+    margin: "100px 0px 50px 0px",
     filter: `drop-shadow(0px 0px 50px ${theme.palette.blue_shadow.main} );`,
   },
 
