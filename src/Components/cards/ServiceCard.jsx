@@ -56,7 +56,10 @@ const SectionTitle = (props) => {
 
 
   return (
-    <div  className={cs.container} style={{backgroundColor:color1,}} >
+    <div  className={cs.container} 
+    style={{
+      backgroundColor:color1, 
+      boxShadow: `0px 0px 50px ${color1+"60"}`,}} >
         <img src={img} className={cs.img}  />
         <h3 className={cs.h3} >{title}</h3>
         <p className={cs.p} >{text}</p>
