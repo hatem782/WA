@@ -5,7 +5,6 @@ import Container from "../Components/Container";
 import Button from "../Components/buttons/Button";
 import SectionTitle from "../Components/elements/SectionTitle";
 import Map from "../Layouts/Map";
-import {FadeLeft} from "../Animations/Fade";
 import TextField from "@material-ui/core/TextField";
 
 const useStyles = makeStyles((theme) => ({
@@ -64,7 +63,6 @@ const Contact = () => {
         <Map/>
       <Container>
         <div className="wrapper2" >
-          <FadeLeft>
         <div className={cs.inputs}>
           <h2>Get In Touch</h2>
           <TextField
@@ -112,7 +110,6 @@ const Contact = () => {
           
           <Button fullWidth={true} > Submit </Button>
         </div>
-        </FadeLeft>
         </div>
       </Container>
       </div>
