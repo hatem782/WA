@@ -7,6 +7,22 @@ const useStyles = makeStyles((theme) => ({
     container:{
         width:"850px",
         margin:"auto",
+
+        [theme.breakpoints.down("lg")]: {
+            width:"850px",
+        },
+
+        [theme.breakpoints.down("md")]: {
+            width:"850px",
+        },
+
+        [theme.breakpoints.down("sm")]: {
+            width:"95%",
+        },
+
+        [theme.breakpoints.down("xs")]: {
+            width:"360px",
+        },
     }
 
 }));

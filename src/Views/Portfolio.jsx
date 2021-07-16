@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import withWidth from '@material-ui/core/withWidth';
 import Grid from "@material-ui/core/Grid";
 import Container from "../Components/Container";
 import SectionTitle from "../Components/elements/SectionTitle";
@@ -17,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
   buttons: {
     width: "100%",
     display: "flex",
+    flexWrap:"wrap",
     justifyContent: "center",
     alignItems:"center",
 
@@ -25,8 +27,10 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "400",
     
     "& div": {
-      padding: "7px 20px",
+      padding: "7px 0px",
       cursor:"pointer",
+      width:"100px",
+      textAlign:"center",
     },
 
     "& .active": {
@@ -52,8 +56,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Portfolio = () => {
+const Portfolio = (props) => {
   const cs = useStyles();
+  const {width}=props;
   const [buttons, setButtons] = useState(buttons_titles);
   const [sites, setSites] = useState([]);
   const [elements,SetElements]=useState([]);
@@ -65,9 +70,10 @@ const Portfolio = () => {
         return ((item.types.indexOf(type)!==-1 )|| type==="All Work");
     });
 
-    setSites(TableToNb(filteredSites,3))
+    let n = (width==="xl"||width==="lg"||width==="md") ? 3 : (width==="sm") ? 2 : 1;
+    setSites(TableToNb(filteredSites,n))
     console.log(sites);
-  },[type]);
+  },[type,width]);
 
   useEffect(()=>{
     SetElements(
@@ -78,7 +84,7 @@ const Portfolio = () => {
   },[sites]);
 
   return (
-    <div className={cs.portfolio}>
+    <div className={cs.portfolio} id="Portfolio" >
       <Container>
         <SectionTitle title="Portfolio" text="Why Choose Me?" />
 
@@ -127,7 +133,7 @@ const Sites=(props)=>{
             {
                 sites_group.map((item,key)=>{
                     return(
-                    <Grid key={key} item xl={4} lg={4} >
+                    <Grid key={key} item xl={4} lg={4} md={4} sm={6} xs={12}  >
                         <SiteImg img={item.img}  /> 
                     </Grid>
                     )
@@ -150,5 +156,5 @@ const SiteImg=(props)=>{
     );
 }
 
-export default Portfolio;
+export default withWidth()(Portfolio);
 

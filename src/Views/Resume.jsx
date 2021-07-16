@@ -19,14 +19,20 @@ const useStyles = makeStyles((theme) => ({
     padding: "100px 0px 150px 0px",
     clipPath: "polygon(0 15%, 100% 0, 100% 85%, 0 100%)",
     backgroundColor: theme.palette.background_2.main,
+
+    [theme.breakpoints.down("xs")]: {
+      clipPath: "polygon(0 10%, 100% 0, 100% 90%, 0 100%)",
+    },
+
   },
   centerY: {
     display: "flex",
     alignItems: "center",
+    justifyContent:"center",
   },
 }));
 
-const About = () => {
+const Resume = () => {
   const cs = useStyles();
 
   const [items, setItems] = useState(resume_data);
@@ -56,17 +62,17 @@ const About = () => {
   }
 
   return (
-    <div className={cs.resume_wrap}>
+    <div className={cs.resume_wrap} id="Resume" >
       <div className={cs.resume}>
         <Container>
           <SectionTitle title="Resume" text="My formal Bio Details" />
 
           <Grid container spacing={10}>
-            <Grid item xl={4} lg={4} className={cs.centerY}>
+            <Grid item xl={4} lg={4} md={4} ms={12} xs={12}  className={cs.centerY}>
               <MenuCard items={items} activeItem={activeItem} />
             </Grid>
 
-            <Grid item xl={8} lg={8}>
+            <Grid item xl={8} lg={8} md={8} ms={12} xs={12} >
               <InfoList infos={Infos} />
             </Grid>
           </Grid>
@@ -76,6 +82,6 @@ const About = () => {
   );
 };
 
-export default About;
+export default Resume;
 
 

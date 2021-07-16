@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
     card:{
         width:"100%",
         boxShadow:`0px 0px 50px ${theme.palette.blue_shadow.main}`,
+        backgroundColor:theme.palette.background_1.main,
 
         transition:"all 0.2s",
 
@@ -47,9 +48,8 @@ const useStyles = makeStyles((theme) => ({
 
 
         "& ul":{
-            backgroundColor:theme.palette.background_1.main,
             margin:"0px",
-            padding:"10px 0px 20px 60px",
+            padding:"10px 0px 0px 60px",
             listStyle: "none",
 
             "& li":{
@@ -65,10 +65,17 @@ const useStyles = makeStyles((theme) => ({
                     fontSize:"10px",
                    
                 },
-            }
+            },
+
+            
         },
 
-        
+        "& .center":{
+            width:"100%",
+            display:"flex",
+            justifyContent:"center",
+            padding:"0px 0px 20px 0px",
+        }
     }
 
 }));
@@ -91,9 +98,9 @@ const PricingCard = (props) => {
                     return <li key={key} > {item} </li>
                 })
             }
-            <Button color={color} > Choose Plan </Button>
         </ul>
 
+        <div className="center" ><Button color={color} > Choose Plan </Button></div>
         
 
     </div>

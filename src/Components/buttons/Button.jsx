@@ -29,20 +29,26 @@ const useStyles = makeStyles((theme) => ({
             transform:"scale(0.95)",
             boxShadow:`0px 7px 7px #00000000`,
         }
+        
     },
     orange:{
         backgroundColor:theme.palette.secondary.main,
         boxShadow:`0px 7px 7px #f57f1750`,
+    },
+    fullWidth:{
+        width:"100%",
     }
 
 }))
 
 const Button=(props)=> {
-    const {children,color}=props;
+    const {children,color="primary",fullWidth=false}=props;
     const cs=useStyles();
     return (
         <button 
-        className={cs.button + " " + (color==="primary" ? " ": cs.orange)  }
+        className={cs.button + " " 
+        + (color==="primary" ? " ": cs.orange)
+        + (fullWidth ? ` ${cs.fullWidth}`:" ") }
         style={
             (color!=="primary"||color!=="secondary") ? 
             {backgroundColor:color,boxShadow:`0px 7px 7px ${color}50`,}

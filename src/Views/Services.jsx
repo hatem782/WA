@@ -20,7 +20,7 @@ const Services = () => {
   const cs = useStyles();
 
   return (
-    <div>
+    <div id="Services" >
       <Container>
         <SectionTitle title="Services" text="What We Provide For You ?" />
 

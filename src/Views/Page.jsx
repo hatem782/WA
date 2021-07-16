@@ -7,6 +7,8 @@ import Services from "./Services.jsx";
 import Resume from "./Resume.jsx";
 import Portfolio from "./Portfolio";
 import Pricing from "./Pricing";
+import Contact from "./Contact";
+import Footer from "../Layouts/Footer";
 
 const useStyles = makeStyles((theme) => ({
     page:{
@@ -25,7 +27,8 @@ const Page = () => {
         <Resume />
         <Portfolio />
         <Pricing />
-        
+        <Contact />
+        <Footer />
       </div>
   );
 };

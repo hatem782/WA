@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundPosition: "50% center",
     height: "480px",
-    width: "99%",
+    width: "100%",
     transform: "scaleX(-1)",
   },
 
@@ -75,7 +75,7 @@ const About = () => {
   const cs = useStyles();
 
   return (
-    <div className={cs.about}>
+    <div className={cs.about} id="About" >
       <Container>
         <SectionTitle title="About Us" text="Why Choose Me?" />
 

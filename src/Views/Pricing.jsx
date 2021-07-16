@@ -18,14 +18,19 @@ const useStyles = makeStyles((theme) => ({
     padding: "100px 0px 200px 0px",
     clipPath: "polygon(0 15%, 100% 0, 100% 85%, 0 100%)",
     backgroundColor: theme.palette.background_2.main,
+
+    [theme.breakpoints.down("xs")]: {
+      clipPath: "polygon(0 5%, 100% 0, 100% 95%, 0 100%)",
+
+    },
   },
 }));
 
-const About = () => {
+const Pricing = () => {
   const cs = useStyles();
 
   return (
-    <div className={cs.pricing_wrap}>
+    <div className={cs.pricing_wrap} id="Pricing"  >
       <div className={cs.pricing}>
         <Container>
           <SectionTitle title="Pricing" text="Check our Services package" />
@@ -33,7 +38,7 @@ const About = () => {
           <Grid container spacing={3}>
             {prices_data.map((item, key) => {
               return (
-                <Grid item xl={4} lg={4} className={cs.centerY}>
+                <Grid key={key} item xl={4} lg={4} md={4} sm={6} xs={12} className={cs.centerY}>
                   <PriceCard key={key} item={item} />
                 </Grid>
               );
@@ -47,4 +52,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Pricing;
