@@ -1,6 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
+import {ZoomIn} from "../../Animations/Zoom";
+
+
 const useStyles = makeStyles((theme) => ({
   
     container: {
@@ -57,10 +60,11 @@ const SectionTitle = (props) => {
 
   return (
     <div className={cs.container}>
-
+        <ZoomIn>
         <h2>{title}</h2>
         <p>{text}</p>
         <hr/>
+        </ZoomIn>
 
     </div>
   );

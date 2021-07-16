@@ -10,6 +10,9 @@ import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
 import Collapse from "@material-ui/core/Collapse";
 
+import Brightness4Icon from '@material-ui/icons/Brightness4';
+import Brightness7Icon from '@material-ui/icons/Brightness7';
+
 const useStyles = makeStyles((theme) => ({
   nav: {
     backgroundColor: theme.palette.background_2.main,
@@ -32,6 +35,13 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.primary.main,
       margin: "0px 10px",
     },
+
+    "& .theme":{
+      color: theme.palette.primary.main,
+      "& *":{
+        fontSize:"30px",
+      }
+    }
   },
 
   responsive_routes: {
@@ -78,8 +88,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Home = () => {
+const NavBar = (props) => {
   const cs = useStyles();
+  const {theme, setTheme}=props;
 
   const [routes, setRoutes] = useState(routes_data);
   const [openMenu, setOpenMenu] = useState(false);
@@ -97,10 +108,19 @@ const Home = () => {
                   <Route key={key} route={route} />
                 );
               })}
+
+              <IconButton className="theme" onClick={()=>{setTheme(!theme)}} >
+                {theme?<Brightness7Icon/>:<Brightness4Icon/>}
+              </IconButton>
+
             </div>
           </Hidden>
 
           <Hidden mdUp>
+            <div>
+            <IconButton className="theme" onClick={()=>{setTheme(!theme)}} >
+                {theme?<Brightness7Icon/>:<Brightness4Icon/>}
+              </IconButton>
             <IconButton
               className="menu_button"
               size="large"
@@ -114,6 +134,8 @@ const Home = () => {
                 <MenuIcon fontSize="large" />
               )}
             </IconButton>
+           
+              </div>
           </Hidden>
         </div>
 
@@ -135,7 +157,7 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default NavBar;
 
 const Route = (props) => {
   const { text, id } = props.route;

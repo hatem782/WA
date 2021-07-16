@@ -45,25 +45,25 @@ const resume_data = [
       active: false,
       details: [
         {
-          title: "Envato University",
-          subTitle: "B.sc in Computer Engineer",
+          title: "Big Digital",
+          subTitle: "Software Developer",
           text: `Reference site about Lorem Ipsum, giving information on its origins, as well as a
             random Lipsum generator.`,
-          years: "2010-2014",
+          years: "2014-2018",
         },
         {
-          title: "Envato University",
-          subTitle: "B.sc in Computer Engineer",
+          title: "Big Digital",
+          subTitle: "Software Developer",
           text: `Reference site about Lorem Ipsum, giving information on its origins, as well as a
           random Lipsum generator.`,
-          years: "2010-2014",
+          years: "2014-2018",
         },
         {
-          title: "Envato University",
-          subTitle: "B.sc in Computer Engineer",
+          title: "Big Digital",
+          subTitle: "Software Developer",
           text: `Reference site about Lorem Ipsum, giving information on its origins, as well as a
         random Lipsum generator.`,
-          years: "2010-2014",
+          years: "2014-2018",
         },
       ],
     },
@@ -74,22 +74,22 @@ const resume_data = [
       active: false,
       details: [
         {
-          title: "Envato University",
-          subTitle: "B.sc in Computer Engineer",
+          title: "Front-End",
+          subTitle: "React - Js",
           text: `Reference site about Lorem Ipsum, giving information on its origins, as well as a
             random Lipsum generator.`,
           years: "2010-2014",
         },
         {
-          title: "Envato University",
-          subTitle: "B.sc in Computer Engineer",
+          title: "Front-End",
+          subTitle: "React - Js",
           text: `Reference site about Lorem Ipsum, giving information on its origins, as well as a
           random Lipsum generator.`,
           years: "2010-2014",
         },
         {
-          title: "Envato University",
-          subTitle: "B.sc in Computer Engineer",
+          title: "Front-End",
+          subTitle: "React - Js",
           text: `Reference site about Lorem Ipsum, giving information on its origins, as well as a
         random Lipsum generator.`,
           years: "2010-2014",
@@ -103,22 +103,22 @@ const resume_data = [
       active: false,
       details: [
         {
-          title: "Envato University",
-          subTitle: "B.sc in Computer Engineer",
+          title: "UI-UX",
+          subTitle: "Adobe-XD",
           text: `Reference site about Lorem Ipsum, giving information on its origins, as well as a
             random Lipsum generator.`,
           years: "2010-2014",
         },
         {
-          title: "Envato University",
-          subTitle: "B.sc in Computer Engineer",
+          title: "UI-UX",
+          subTitle: "Adobe-XD",
           text: `Reference site about Lorem Ipsum, giving information on its origins, as well as a
           random Lipsum generator.`,
           years: "2010-2014",
         },
         {
-          title: "Envato University",
-          subTitle: "B.sc in Computer Engineer",
+          title: "UI-UX",
+          subTitle: "Adobe-XD",
           text: `Reference site about Lorem Ipsum, giving information on its origins, as well as a
         random Lipsum generator.`,
           years: "2010-2014",

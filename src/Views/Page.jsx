@@ -16,11 +16,11 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const Page = () => {
+const Page = (props) => {
     const cs = useStyles();
   return (
       <div className={cs.page} >
-        <Navbar />
+        <Navbar theme={props.theme} setTheme={props.setTheme} />
         <Home />
         <About/>
         <Services/>

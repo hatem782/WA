@@ -7,6 +7,9 @@ import withWidth from '@material-ui/core/withWidth';
 import img_person1 from "../Assets/images/happy-young-man-pointing-finger-aside_1262-14983@1X.png";
 import blueWave from "../Assets/images/blue_wave.png";
 
+import {FadeLeft,FadeRight} from "../Animations/Fade";
+import {ZoomIn} from "../Animations/Zoom";
+
 const useStyles = makeStyles((theme) => ({
   home: {
     padding: "200px 0px 0px 0px",
@@ -27,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       height: "250px",
       width: "250px",
-      margin: "auto",
+      margin: "40px auto 0px auto",
       border: `solid 10px ${theme.palette.background_2.main}`,
     },
   },
@@ -114,6 +117,7 @@ const Home = (props) => {
             xs={12}
             className={cs.description_container}
           >
+            <FadeRight>
             <div className={cs.description}>
               <h3>
                 Hello, IM <span className="orange"> White Alexa </span>
@@ -125,10 +129,12 @@ const Home = (props) => {
               <Button color="secondary">Get Resume</Button>
               </div>
             </div>
+            </FadeRight>
           </Grid>
 
           <Grid item xl={6} lg={6} md={6} sm={6} xs={12}>
-            <div className={cs.image} />
+            
+          <ZoomIn><div className={cs.image} /></ZoomIn>
           </Grid>
         </Grid>
       </Container>

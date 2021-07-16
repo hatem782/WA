@@ -10,6 +10,8 @@ import Swipper from "../Components/elements/Swipper";
 import {buttons_titles,all_sites} from "../Data/portfolio_data";
 import {TableToNb} from "../Functions/functions";
 
+import {ZoomIn,ZoomOut} from "../Animations/Zoom";
+
 const useStyles = makeStyles((theme) => ({
   portfolio: {
     padding: "0px 0px 50px 0px",
@@ -89,6 +91,7 @@ const Portfolio = (props) => {
         <SectionTitle title="Portfolio" text="Why Choose Me?" />
 
         <div className={cs.buttons}>
+          
           {buttons.map((button, key) => {
             return (
               <ButtonP
@@ -115,12 +118,14 @@ const ButtonP = (props) => {
   const { title, current, select } = props;
 
   return (
+    <ZoomOut>
     <div
       className={cs.button + (current === title ? " active" : "")}
       onClick={select}
     >
       {title}
     </div>
+    </ZoomOut>
   );
 };
 
@@ -134,7 +139,9 @@ const Sites=(props)=>{
                 sites_group.map((item,key)=>{
                     return(
                     <Grid key={key} item xl={4} lg={4} md={4} sm={6} xs={12}  >
+                      <ZoomIn>
                         <SiteImg img={item.img}  /> 
+                      </ZoomIn>
                     </Grid>
                     )
                 })

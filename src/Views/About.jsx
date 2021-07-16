@@ -7,6 +7,8 @@ import SectionTitle from "../Components/elements/SectionTitle";
 
 import img_person2 from "../Assets/images/corporate-man-holding-ipad-medium-shot_23-2148336825@1X.png";
 
+import {ZoomIn} from "../Animations/Zoom";
+
 const useStyles = makeStyles((theme) => ({
   about: {
     padding: "0px 0px 50px 0px",
@@ -46,6 +48,12 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.primary.main,
     },
 
+    "& .buttons":{
+      display:"flex",
+      justifyContent:"center",
+      alignItems:"center",
+    },
+
     "& ul":{
       fontWeight: "300",
       fontSize: "12px",
@@ -76,6 +84,7 @@ const About = () => {
 
   return (
     <div className={cs.about} id="About" >
+      <ZoomIn duration={1000} >
       <Container>
         <SectionTitle title="About Us" text="Why Choose Me?" />
 
@@ -106,14 +115,16 @@ const About = () => {
                     <li>Supper Support</li>
                 </ul>
 
-
+                <div className="buttons" >
                 <Button color="primary">Hire Me</Button>
                 <Button color="secondary">Get Resume</Button>
+                </div>
               </div>
             </Grid>
           </Grid>
         </div>
       </Container>
+      </ZoomIn>
     </div>
   );
 };

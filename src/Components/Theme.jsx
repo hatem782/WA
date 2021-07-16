@@ -56,10 +56,10 @@ const darkTheme = createTheme({
 
 
 const Theme = (props) => {
-  const { dark = false, children } = props;
+  const { theme, children } = props;
 
   return (
-    <ThemeProvider theme={dark ? darkTheme : lightTheme}>
+    <ThemeProvider theme={theme ? lightTheme : darkTheme}>
       {children}
     </ThemeProvider>
   );

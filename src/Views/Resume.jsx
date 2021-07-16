@@ -9,6 +9,9 @@ import resume_data from "../Data/resume_data";
 import MenuCard from "../Components/cards/MenuCard";
 import InfoList from "../Components/elements/InfoList";
 
+import {FadeLeft} from "../Animations/Fade";
+import {ZoomIn} from "../Animations/Zoom";
+
 const useStyles = makeStyles((theme) => ({
   resume_wrap: {
     margin: "100px 0px 50px 0px",
@@ -69,11 +72,15 @@ const Resume = () => {
 
           <Grid container spacing={10}>
             <Grid item xl={4} lg={4} md={4} ms={12} xs={12}  className={cs.centerY}>
+              <ZoomIn>
               <MenuCard items={items} activeItem={activeItem} />
+              </ZoomIn>
             </Grid>
 
             <Grid item xl={8} lg={8} md={8} ms={12} xs={12} >
+              <FadeLeft>
               <InfoList infos={Infos} />
+              </FadeLeft>
             </Grid>
           </Grid>
         </Container>

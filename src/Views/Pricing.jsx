@@ -8,6 +8,8 @@ import prices_data from "../Data/prices_data";
 
 import PriceCard from "../Components/cards/PricingCard";
 
+import {FadeUp} from "../Animations/Fade";
+
 const useStyles = makeStyles((theme) => ({
   pricing_wrap: {
     margin: "100px 0px 50px 0px",
@@ -39,7 +41,7 @@ const Pricing = () => {
             {prices_data.map((item, key) => {
               return (
                 <Grid key={key} item xl={4} lg={4} md={4} sm={6} xs={12} className={cs.centerY}>
-                  <PriceCard key={key} item={item} />
+                 <FadeUp> <PriceCard key={key} item={item} /></FadeUp>
                 </Grid>
               );
             })}

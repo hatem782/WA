@@ -7,6 +7,9 @@ import SectionTitle from "../Components/elements/SectionTitle";
 
 import ServiceCard from "../Components/cards/ServiceCard";
 
+import {FadeUp} from "../Animations/Fade";
+import {ZoomIn} from "../Animations/Zoom";
+
 import img1 from "../Assets/images/icon@1X.png";
 import img2 from "../Assets/images/icon@1X (1).png";
 import img3 from "../Assets/images/icon@1X (2).png";
@@ -22,13 +25,15 @@ const Services = () => {
   return (
     <div id="Services" >
       <Container>
-        <SectionTitle title="Services" text="What We Provide For You ?" />
+       <SectionTitle title="Services" text="What We Provide For You ?" />
 
         <Grid container spacing={3}>
           {services.map((service, key) => {
             return (
               <Grid key={key} item xl={4} lg={4} md={6} sm={12} xs={12}>
+                <FadeUp>
                 <ServiceCard service={service} />
+                </FadeUp>
               </Grid>
             );
           })}
