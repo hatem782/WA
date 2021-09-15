@@ -70,7 +70,7 @@ const Footer = () => {
       <div className={cs.footer} >
           <Container >
               <div className="container" >
-              <p> © 2019 Createuiux. All rights reserved. </p>
+              <p> ©This site is created by Hatem Ben Echikh. </p>
               <div className="icons" >
                   <FaFacebook className="icon1" />
                   <AiFillBehanceCircle className="icon2" />
